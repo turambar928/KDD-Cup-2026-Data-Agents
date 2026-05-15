@@ -1,0 +1,15 @@
+dataset:
+  root_path: /home/taozifu2025/kdd_cup/public/input
+
+agent:
+  model: Qwen3-32B-no-thinking
+  api_base: http://api.cipsup.cn/v1
+  api_key: sk-1Pwvt4lJyd4dNe5asFxg3Taf3ByDOZ7QrzhBouKdWd6yurl4
+  max_steps: 16
+  temperature: 0.0
+
+run:
+  output_dir: artifacts/runs
+  run_id:
+  max_workers: 4
+  task_timeout_seconds: 600

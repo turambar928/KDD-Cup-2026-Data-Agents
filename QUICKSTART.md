@@ -19,11 +19,39 @@ uv sync
 
 ## 第二步：下载数据集
 
-从官方 README 的 Demo Dataset 链接下载，解压后放到项目目录下。
+### 下载地址
 
-本机数据集路径：`/home/taozifu2025/kdd_cup/public/`
+官方 Demo Dataset（Phase 1，共 50 个任务）：
 
-目录结构如下：
+**Google Drive：** https://drive.google.com/file/d/1c6u5WlFw4KV7CBRyXh5BvFYbKqxhBSbL/view
+
+> 也可以在官方仓库 README 的 "Demo Dataset" 徽章中找到该链接。
+
+### 下载并解压
+
+**方法一：浏览器下载后上传到服务器**
+
+1. 在本地浏览器打开上方链接，下载 zip 文件
+2. 用 `scp` 或 `rsync` 上传到服务器：
+   ```bash
+   scp demo_samples_0417.zip taozifu2025@CIP-GPUSERVER-16:~/kdd_cup/
+   ```
+
+**方法二：服务器直接用 gdown 下载（需要能访问 Google）**
+
+```bash
+pip install gdown
+gdown 1c6u5WlFw4KV7CBRyXh5BvFYbKqxhBSbL
+```
+
+### 解压到 public/ 目录
+
+```bash
+cd ~/kdd_cup
+unzip demo_samples_0417.zip -d public/
+```
+
+解压后确认目录结构如下：
 
 ```
 public/
@@ -38,6 +66,8 @@ public/
     │   └── gold.csv        # 标准答案
     └── ...
 ```
+
+> `public/` 已加入 `.gitignore`，数据集不会被提交到 git。
 
 ---
 
